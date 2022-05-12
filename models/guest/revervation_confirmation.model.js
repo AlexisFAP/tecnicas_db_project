@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const ReservationConfirmationScheme = new mongoose.Schema(
     {
         confirm_number:{
-            type:String,
+            type:Number,
         },
         hotel_id:{
             type:String,

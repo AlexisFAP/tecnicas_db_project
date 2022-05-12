@@ -9,7 +9,7 @@ const ReservationGuestScheme = new mongoose.Schema(
             type:String,
         },
         confirm_number:{
-            type:String,
+            type:Number,
         },
         hotel_id:{
             type:String,
