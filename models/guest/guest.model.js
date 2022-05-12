@@ -4,6 +4,7 @@ const GuestScheme = new mongoose.Schema(
     {
         guest_id:{
             type:String,
+            unique:true,
         },
         first_name:{
             type:String,

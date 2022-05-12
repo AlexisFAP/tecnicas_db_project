@@ -4,6 +4,7 @@ const PoiHotelScheme = new mongoose.Schema(
     {
         hotel_id:{
             type:String,
+            unique:true,
         },
         poi_name:{
             type:String,

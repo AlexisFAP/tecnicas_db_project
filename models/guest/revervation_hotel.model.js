@@ -27,4 +27,6 @@ const ReservationHotelScheme = new mongoose.Schema(
     }
 )
 
+ReservationHotelScheme.index({hotel_id:1, start_date:1}, {unique:true});
+
 module.exports = mongoose.model('reservation_hotel',ReservationHotelScheme);

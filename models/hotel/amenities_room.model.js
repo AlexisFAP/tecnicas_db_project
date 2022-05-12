@@ -24,4 +24,6 @@ const AmenitiesRoomScheme = new mongoose.Schema(
     }
 )
 
+AmenitiesRoomScheme.index({room_number:1, hotel_id:1}, {unique:true});
+
 module.exports = mongoose.model('amenities_room',AmenitiesRoomScheme);

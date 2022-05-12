@@ -4,6 +4,7 @@ const RoomsHotelDateScheme = new mongoose.Schema(
     {
         hotel_id:{
             type:String,
+            unique:true,
         },
         date:{
             type:Date,

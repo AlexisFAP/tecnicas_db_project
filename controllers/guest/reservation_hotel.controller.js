@@ -1,10 +1,10 @@
-const { reservationConfirmationModel } = require('../../models');
+const { reservationHotelModel } = require('../../models');
 const { matchedData } = require('express-validator')
 
 const getItem = async (req, res) => {
     try {
-        const { num } = req.params;
-        const data = await reservationConfirmationModel.find({confirm_number:num});
+        const { hotel_id, date, guest_id } = req.params;
+        const data = await reservationHotelModel.find({$and:[{hotel_id:hotel_id},{start_date: {$lt:date}}, {end_date: {$gte:date}},{guest_id:guest_id}]})
         res.send({data});
     } catch (e) {
         console.log(e);
@@ -12,10 +12,11 @@ const getItem = async (req, res) => {
     }
 }
 
+
 const createItem = async (req, res) => {
     try {
         const body = matchedData(req);
-        const data = await reservationConfirmationModel.create(body);
+        const data = await reservationHotelModel.create(body);
         res.send({data})
     } catch (e) {
         console.log(e);
@@ -23,4 +24,4 @@ const createItem = async (req, res) => {
     }
 }
 
-module.exports = { createItem, getItem };
+module.exports = { createItem,getItem };

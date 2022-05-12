@@ -4,6 +4,7 @@ const ReservationConfirmationScheme = new mongoose.Schema(
     {
         confirm_number:{
             type:Number,
+            unique:true,
         },
         hotel_id:{
             type:String,

@@ -12,11 +12,16 @@ const validatorCreateItem = [
 ];
 
 const validatorGetItem = [
-    check("num")
+    check("hotel_id")
+    .exists()
+    .notEmpty(),
+    check("date")
+    .exists()
+    .notEmpty(),
+    check("guest_id")
     .exists()
     .notEmpty(),
     (req, res, next) => {return validateResults(req, res, next)}
 ];
-
 
 module.exports = { validatorCreateItem, validatorGetItem };
