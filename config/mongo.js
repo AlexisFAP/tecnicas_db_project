@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 const dbConnect = () => {
-    const URL = 'mongodb://localhost/tecnicas_db_project';
+    const URL = 'mongodb://localhost:27017/tecnicas_db_project';
     mongoose.connect(URL, {
         useNewUrlParser: true,
         useUnifiedTopology: true,

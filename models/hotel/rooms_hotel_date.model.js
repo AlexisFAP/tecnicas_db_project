@@ -6,7 +6,10 @@ const RoomsHotelDateScheme = new mongoose.Schema(
             type:String,
             unique:true,
         },
-        date:{
+        start_date:{
+            type:Date, 
+        },
+        end_date:{
             type:Date,
         },
         room_number:{

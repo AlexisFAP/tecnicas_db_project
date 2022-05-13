@@ -3,8 +3,8 @@ const { matchedData } = require('express-validator')
 
 const getItem = async (req, res) => {
     try {
-        const { id, date } = req.params;
-        const data = await roomHotelDateModel.find({$and:[{hotel_id:id},{date:date}]});
+        const { date } = req.params;
+        const data = await roomHotelDateModel.find({$and:[{start_date: {$lt:date}}, {end_date: {$gte:date}}]});
         res.send({data});
     } catch (e) {
         console.log(e);
